@@ -1,0 +1,15 @@
+*.exe
+*.100
+*.def
+*.sch
+*.txt
+*.EXE
+*.LOG
+*.hlp
+*.wth
+*.wri
+output/
+batch_script/*.prep
+batch_script/*.sch
+!batch_script/example.prep
+!batch_script/schedule_header.txt

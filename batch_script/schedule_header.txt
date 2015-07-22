@@ -1,0 +1,20 @@
+2000          Starting year
+2050          Last year
+c4grs_own.100    Site file name
+2             Labeling type
+-1            Labeling year
+-1.00         Microcosm
+1             CO2 Systems
+1990  2050  
+1             Initial system
+G3            Initial crop
+              Initial tree
+
+Year Month Option
+1             Block #   
+2050          Last year
+1             Repeats # years
+2000          Output starting year
+1             Output month
+0.083         Output interval
+S             Weather choice
