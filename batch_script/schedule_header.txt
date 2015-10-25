@@ -1,7 +1,7 @@
 2000          Starting year
 2050          Last year
 c4grs_own.100    Site file name
-2             Labeling type
+0             Labeling type
 -1            Labeling year
 -1.00         Microcosm
 1             CO2 Systems
@@ -16,5 +16,5 @@ Year Month Option
 1             Repeats # years
 2000          Output starting year
 1             Output month
-0.083         Output interval
+0.0833        Output interval
 S             Weather choice

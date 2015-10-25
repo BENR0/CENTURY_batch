@@ -1,9 +1,29 @@
 #!/bin/bash
+###################################################################
+#This script reads schedule prep files and converts them to CENTURY
+#schedule files.
+#Together with the echo_schdule.sh script for the same month range
+#up to two management types can be be scheduled. 
+#Using multiple lines in the prep file management type for
+#different month ranges can be specified.
+#
+###################################################################
+
+#where does script executable reside
+#PROGNAME='type $0 | awk '{print $3}''
+PROGDIR=$(dirname "$0") 
+
 #get arguments for input and output file and assign variables
 IFILE=$1
 OFILE=$2
 
 #management echo function
+#prints each given management typen with option and month at which
+#to apply this type in the format of the century schedule file.
+#vars:
+#MM: Month
+#MG: Management type
+#OP: Option of management type
 echo_mgmt () {
     #get arguments of function and assign to vars
     MM=$1
@@ -27,13 +47,13 @@ while IFS='&' read -r run first second third;do
 
     #write header for schedule file only once
     if [ "$k" == "1" ]; then
-        cat batch_script/schedule_header.txt
+        cat $PROGDIR/schedule_header.txt
         #first echo default for growing season month
         echo_mgmt 3 FRST
     fi
 
    #echo each management defined in lines of file
-   echo_schedule.sh "$first" "$second" "$third" 
+   $PROGDIR/echo_schedule.sh "$first" "$second" "$third" 
 
    if [ "$k" == "$nlines" ]; then
        #echo default for last growingseason month
@@ -41,7 +61,7 @@ while IFS='&' read -r run first second third;do
        #echo closing line of schedule file
        echo '-999 -999 X' 
    fi 
-   
+
    #increase line count
    ((k++))
 
