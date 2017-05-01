@@ -1,11 +1,15 @@
-##Batch shell scripts for running CENTURY carbon model
+Batch shell scripts for running CENTURY carbon model
+====================================================
 
-###Prerequesits
+Prerequesits
+------------
+
  - directory named "output" in the roots directory of century model which is used for output files
  - one ore more prep files like the example file in the "batch_script" directory
 
+User options/ adaptations
+-------------------------
 
-###User options/ adaptations
 The scripts in the "batch_script" directory are used to create schedule files (.sch) based on the
 prep files which are used
 to run the century model.
@@ -23,7 +27,9 @@ the type of weather and so on. This file needs to be adapted by hand or appropia
 event100 program output needs to be copied here.
 
 
-###Running
+Running
+-------
+
 In order to run a batch of different schedule files, the user simply needs to run the "iterate.sh"
 script in the root directory of the century model. The script then will translate the .prep files
 the user has created to schedule files, run the model on each of them, save the binary output to the
